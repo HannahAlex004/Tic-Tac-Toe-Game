@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: rgb(99, 96, 96);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Ensure full height of the viewport */
+  }
+  
+  #gameTitle {
+    color: black; /* Change the font color to black */
+    font-style: italic; /* Make the font italic */
+    animation: bounce 2s infinite; /* Apply the bounce animation infinitely */
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  
+  h1#gameTitle {
+    margin: 50px 0 50px 0;
+    font-size: 3rem;
+    color: black; 
+    font-style: italic;
+  }
+    
+  
+  input {
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 1.2rem;
+  }
+  
+  button {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  img {
+    width: 30px;
+  }
+  
+  #cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 2px solid red;
+    /* height: 180px; */
+    /* width: 50vh; */
+    /* height: 50vh; */
+  }
+  
+  .btn {
+    font-size: 2rem;
+    width: 100px;
+    height: 100px;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+    background-color: rgb(78, 79, 80);
+  }
+  
+  .btn:hover {
+    background-color: rgb(45, 46, 47);
+  }
