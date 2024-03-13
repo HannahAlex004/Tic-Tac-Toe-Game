@@ -1,4 +1,6 @@
 # Tic-Tac-Toe-Game
+SEM IV_Computer Networks MiniProject
+
 This game is written using Javascript, HTML and CSS. SSL(Secure Sockets Layer) is also included.
 ## Server-Side (Node.js)
 Dependencies: Requires express, fs, path, https, and socket.io. 
