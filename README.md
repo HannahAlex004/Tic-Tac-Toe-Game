@@ -8,7 +8,7 @@ HTTPS Server: Creates an HTTPS server using the provided SSL certificate and pri
 Socket.IO Initialization: Sets up Socket.IO on the server.
 <br>
 Static File Serving: Serves static files from the root directory.
-### Socket.IO Events:
+#### Socket.IO Events:
 "find": Handles when a player tries to find a match.
 <br>
 "playing": Handles when a player makes a move.
@@ -18,7 +18,7 @@ Static File Serving: Serves static files from the root directory.
 HTTP Route: Defines a route for the root URL, serving an HTML file.
 ## Client-Side (HTML/JavaScript)
 HTML Structure: Contains a form with an input field for the player's name and a button to find a match.
-### JavaScript:
+#### JavaScript:
 Sends a "find" event to the server with the player's name when the button is clicked.
 <br>
 Listens for "playing" events from the server to update the game state.
