@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tilt Warp', cursive;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #loading {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tic Tac Toe</h1>
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <button id="find">Search for a player</button>
+
+    <img id="loading" src="loading.gif" alt="Loading..." width="32">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+
+    <script>
+        const socket = io();
+
+        document.getElementById('find').addEventListener("click", function () {
+            const name = document.getElementById("name").value;
+            if (name.trim() === "") {
+                alert("Please enter a name");
+                return;
+            }
+
+            socket.emit("find", { name: name });
+
+            document.getElementById("find").disabled = true;
+            document.getElementById("loading").style.display = "block";
+        });
+
+        socket.on("playing", (e) => {
+            // Handle gameplay updates from the server
+            console.log("Received playing event from server:", e);
+        });
+    </script>
+
+</body>
+
+</html>
